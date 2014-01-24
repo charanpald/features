@@ -8,19 +8,19 @@ As an example, the following code generate two sets of examples sampled from the
 
 :: 
 
-import numpy
-from features import KernelCCA
-from kernel import LinearKernel
+    import numpy
+    from features import KernelCCA
+    from kernel import LinearKernel
 
-numExamples = 5
-numXFeatures = 10
-numYFeatures = 15
-X = numpy.random.rand(numExamples, numXFeatures)
-Y = numpy.random.rand(numExamples, numYFeatures)
+    numExamples = 5
+    numXFeatures = 10
+    numYFeatures = 15
+    X = numpy.random.rand(numExamples, numXFeatures)
+    Y = numpy.random.rand(numExamples, numYFeatures)
 
-tau = 0.0
-kernel = LinearKernel()
-cca = KernelCCA(kernel, kernel, tau)
-alpha, beta, lmbdas = cca.learnModel(X, Y)
+    tau = 0.0
+    kernel = LinearKernel()
+    cca = KernelCCA(kernel, kernel, tau)
+    alpha, beta, lmbdas = cca.learnModel(X, Y)
 
 
